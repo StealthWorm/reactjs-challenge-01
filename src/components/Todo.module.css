@@ -1,0 +1,91 @@
+.todoItem {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  background-color: var(--gray-500);
+  border-radius: 8px;
+  padding: 1rem;
+  gap: 0.75rem;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: space-between;
+  align-items: center;
+  transition: .5s;
+  cursor: pointer;
+}
+
+.todoItem:hover {
+  background-color: var(--gray-400);
+}
+
+.todoItem .open {
+  display: block;
+  word-wrap: break-word;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  overflow-y: auto;
+  line-break: loose;
+  color: var(--gray-100);
+}
+
+.todoItem .completed {
+  display: block;
+  word-wrap: break-word;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  overflow-y: auto;
+  text-decoration: line-through;
+  color: var(--gray-300);
+}
+
+.todoItem button {
+  align-self: flex-start;
+  background: transparent;
+  border: 0;
+  color: var(--gray-300);
+  cursor: pointer;
+  line-height: 0;
+  border-radius: 2px;
+  transition: .5s;
+}
+
+.todoItem button:hover {
+  color: var(--red-500);
+}
+
+.todoItem > input[type="checkbox"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: flex-start;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  border: 2px solid var(--blue-300);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  transition: .5s;
+  font-size: 10px;
+  color: var(--white);
+  transition: .5s;
+}
+
+.todoItem > input[type="checkbox"]:checked {
+  background: var(--purple-500);
+  border: none;
+}
+
+.todoItem > input[type="checkbox"]:checked:hover {
+  background: var(--purple-300);
+  border: none;
+}
+
+.todoItem > input[type="checkbox"]::before {
+  content: "\2714";
+  display: none;
+}
+
+.todoItem > input[type="checkbox"]:checked::before {
+  display: block;
+}
